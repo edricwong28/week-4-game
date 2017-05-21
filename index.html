@@ -37,12 +37,6 @@
 			</div>
 			<div>Your total Score is: <span id="score"></span></div>
 		</section>
-	
-			
-		
-		<section>
-			<div>Score goes here</div>
-		</section>
 	</container>
 </body>
 </html>
@@ -53,13 +47,18 @@
   //GLOBAL VARIABLES FOR HOLDING DATA
   //______________________________________________________________________________________
   var targetNumber = [];
-  var crystalNumber = [];
+  var redCrystal = Math.floor((Math.random() * 12) + 1);
+  var blueCrystal = Math.floor((Math.random() * 12) + 1);
+  var greenCrystal = Math.floor((Math.random() * 12) + 1);
+  var purpleCrystal = Math.floor((Math.random() * 12) + 1);
+
 
   //COUNTERS
   //______________________________________________________________________________________
   var score = 0;
   var wins = 0;
   var losses = 0;
+  
 
   //FUNCTIONS
   //______________________________________________________________________________________
@@ -70,22 +69,35 @@
 		$("#score").html(score);
 		$("#wins").html(wins);
 		$("#losses").html(losses);
+		console.log(targetNumber);
 		setCrystal();
 		
 	}
 
 	function setCrystal(){
-		crystalNumber = Math.floor((Math.random() * 12) + 1);
-		$("#crystal-1").val(crystalNumber);
-		$("#crystal-2").val(crystalNumber);
-		$("#crystal-3").val(crystalNumber);
-		$("#crystal-4").val(crystalNumber);
-			$("#crystal-1").click();
-			$("#crystal-1").click();
-			$("#crystal-1").click();
-			$("#crystal-1").click();
-			console.log(crystalNumber);
-
+		
+			
+				$("#crystal-1").on("click", function(){
+					$("#crystal-1").attr ("data-crystalvalue", redCrystal);
+					score += redCrystal;
+					$("#score").html(score);
+				});
+				$("#crystal-2").on("click", function(){
+					$("#crystal-2").attr ("data-crystalvalue", redCrystal);
+					score += greenCrystal;
+					$("#score").html(score);
+				});
+				$("#crystal-3").on("click", function(){
+					$("#crystal-3").attr ("data-crystalvalue", redCrystal);
+					score += blueCrystal;
+					$("#score").html(score);
+				});
+				$("#crystal-4").on("click", function(){
+					$("#crystal-4").attr ("data-crystalvalue", redCrystal);
+					score += purpleCrystal;
+					$("#score").html(score);
+				});
+				
    }
 
 startGame();
