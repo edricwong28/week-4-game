@@ -1,0 +1,23 @@
+.header{
+
+	border-color: red;
+	border-width: 1px;
+	border-style: solid;
+}
+
+#crystal-1 {
+	height: 200px; 
+	width: 200px;
+}
+#crystal-2 {
+	height: 200px; 
+	width: 200px;
+}
+#crystal-3 {
+	height: 200px; 
+	width: 200px;
+}
+#crystal-4 {
+	height: 200px; 
+	width: 200px;
+}
